@@ -2,7 +2,7 @@
 
 This is a weather application built using **React**. It allows the user to search for a city and get the current weather details of that city. The application also provides suggestions for city names as the user types in the search bar.
 
-**LIVE LINK:**https://nagarjuna06.github.io/Weather-Application/
+**LIVE LINK:** https://nagarjuna06.github.io/Weather-Application/
 
 ### Features
 
