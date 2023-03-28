@@ -1,38 +1,205 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.bg-container{
+  background: #06283D;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar{
+  background-color: transparent;
+  padding:0px 25px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.error {
+  width: 100%;
+  color: red;
+}
+.input{
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  text-transform: uppercase;
   text-align: center;
+  width: 70%;
+  background-color: transparent;
+  border-bottom:2px solid tomato;
+}
+.input::placeholder{
+  font-size: 16px;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.884);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.icon{
+  font-size: 40px;
+  padding: 6px;
+  color: palevioletred;
+}
+.search-icon{
+  border-radius: 50%;
+  font-size: 24px;
+  color:#5598c1;
+}
+.search-icon:hover{
+  background-color: #5598c1;
+  color: #fff;
+  cursor: pointer;
+}
+.location-icon{
+  width: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.not-found{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  scale: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.not-found img {
+  margin-top: 20px;
+  width: 45%;
+}
+.content{
+  scale: 0;
+  margin-top: 25px;
+  
+}
+
+.fade-in {
+  animation: .5s fadeIn forwards;
+  animation-delay: .5s;
+}
+
+@keyframes fadeIn {
+  to {
+      scale: 1;
+    }
+}
+
+.weather-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  scale: 0;
+}
+.weather-container img{
+  width: 250px;
+  margin-bottom: 20px;
+  filter: drop-shadow(5px 5px 3px  rgb(116, 116, 116));
+}
+.description{
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+
+.sub-container{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  scale: 0;
+}
+.text{
+  font-weight: 600;
+}
+.save-btn{
+  width: 90%;
+  margin-left: 16px;
+  margin-top: 20px;
+  background-color: #0f3e5c;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 5px;
+  scale: 0;
+}
+.result{
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+
+}
+.weather-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}
+.weather-app{
+  text-align: center;
+  transition: .5s ease-out;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+}
+.city-name-list{
+  height: 70vh;
+  overflow-y: scroll;
+}
+.city-name-list::-webkit-scrollbar{
+  display: none;
+}
+.city-name{
+  list-style-type: none;
+  text-align: left;
+  padding-left: 20%;
+  line-height: 30px;
+  margin: 2px;
+  cursor: pointer;
+}
+.city-name:hover{
+  background-color: #5598c1;
   color: white;
+  font-weight: bold;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:700px) {
+  .weather-app{
+    width: 340px;
   }
-  to {
-    transform: rotate(360deg);
+  .result{
+    display: block;
+    margin-top: auto;
+  }
+  .weather-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .not-found img {
+    margin-top: 50px;
+    width: 70%;
+  }
+  .weather-container img{
+    width: 200px;
+  }
+  .input{
+    font-size: 16px;
+    width:  80%;
+  }
+  .search-bar{
+    flex-wrap: nowrap;
+    padding: 0px 15px;
+    padding-top: 20px;
+  }
+  .city-name{
+    padding-left: 30%;
   }
 }
